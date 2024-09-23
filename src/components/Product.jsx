@@ -29,7 +29,7 @@ const Product = () => {
 
     const fetchImage = async () => {
       const response = await axios.get(
-        `https://ecom-proj-production.up.railway.app/api/product/${id}/image`,
+        `https://ecom-proj-production.up.railway.app/product/${id}/image`,
         { responseType: "blob" }
       );
       setImageUrl(URL.createObjectURL(response.data));
@@ -40,7 +40,7 @@ const Product = () => {
 
   const deleteProduct = async () => {
     try {
-      await axios.delete(`https://ecom-proj-production.up.railway.app/api/product/${id}`);
+      await axios.delete(`https://ecom-proj-production.up.railway.app/product/${id}`);
       removeFromCart(id);
       console.log("Product deleted successfully");
       alert("Product deleted successfully");

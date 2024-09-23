@@ -28,7 +28,7 @@ const UpdateProduct = () => {
         setProduct(response.data);
       
         const responseImage = await axios.get(
-          `https://ecom-proj-production.up.railway.app/product/${id}/image`,
+          `https://ecom-proj-production.up.railway.app/api/product/${id}/image`,
           { responseType: "blob" }
         );
        const imageFile = await converUrlToFile(responseImage.data,response.data.imageName)
