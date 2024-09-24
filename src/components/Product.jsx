@@ -40,9 +40,9 @@ const Product = () => {
 
   const deleteProduct = async () => {
     try {
-      await axios.delete(`https://ecom-proj-production.up.railway.app/product/${id}`);
+      await axios.delete(`https://ecom-proj-production.up.railway.app/api/product/${id}`);
       removeFromCart(id);
-      console.log("Product deleted successfully");
+      console.log("Deleting product with id:", id);
       alert("Product deleted successfully");
       refreshData();
       navigate("/");

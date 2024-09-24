@@ -36,13 +36,13 @@ export const AppProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
-    console.log("productID",productId)
+    console.log("productID", productId);
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    console.log("CART",cart)
+    console.log("Updated Cart:", updatedCart);  // Log the updated cart
   };
-
+  
   const refreshData = async () => {
     try {
       const response = await axios.get("/products");
